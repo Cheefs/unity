@@ -8,6 +8,8 @@ TagManager:
   - Bomb
   - Background
   - Ground
+  - Obstacle
+  - Sensor
   layers:
   - Default
   - TransparentFX
