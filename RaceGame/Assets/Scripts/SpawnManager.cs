@@ -10,7 +10,7 @@ public class SpawnManager : MonoBehaviour
     private float startDelay = 1.0f;
     private float zRange = 8.0f;
     private float xRange = 19.0f;
-    private float ySpawn = 0.6f;
+    private float ySpawn = -0.7f;
 
     private float enemyInterval = 1.0f;
     private float powerupInterval = 5.0f;
