@@ -39,6 +39,14 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
 
+
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyUp(KeyCode.F))
+        {
+            gm.ToggleDash();
+
+            playerAnim.SetFloat("Speed_Multiplier", gm.IsDashMode() ? 2.0f : 1.0f);
+
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -68,7 +76,7 @@ public class PlayerController : MonoBehaviour
             }
             case "Sensor":
             {
-                gm.UpdateScore();
+                gm.UpdateScore(10);
                 return;
             }
         }
