@@ -5,31 +5,26 @@ using UnityEngine;
 public class DestroyOutOfBounds : MonoBehaviour
 {
     private float topBound = 30;
+    private float leftBound = 25;
     private float lowerBound = -10;
+    [SerializeField] GameManager gm;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z > topBound)
+        if (transform.position.z > topBound )
         {
-            // Instead of destroying the projectile when it leaves the screen
-            //Destroy(gameObject);
-
-            // Just deactivate it
             gameObject.SetActive(false);
-
         }
-        else if (transform.position.z < lowerBound)
+        else if (transform.position.z < lowerBound || transform.position.x > leftBound || transform.position.x < -leftBound)
         {
-            Debug.Log("Game Over!");
+            gm.DecreaseLives();
             Destroy(gameObject);
         }
-
     }
 }

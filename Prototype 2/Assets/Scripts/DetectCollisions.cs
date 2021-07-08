@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
-    {
-        // Instead of destroying the projectile when it collides with an animal
-        //Destroy(other.gameObject); 
+    [SerializeField] GameManager gm;
 
-        // Just deactivate the food and destroy the animal
-        other.gameObject.SetActive(false);
-        Destroy(gameObject);
+    private void Start()
+    {
+        gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.SetActive(false);
+        gm.UpdateScore(1);
+        Destroy(gameObject);
+    }
 }
