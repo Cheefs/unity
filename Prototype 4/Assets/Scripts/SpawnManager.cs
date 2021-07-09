@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
     private float spawnRange = 9.0f;
 
-    public GameObject enemyPrefab;
-    public GameObject powerupPrefab;
+    [SerializeField] List<GameObject> enemyPrefabs;
+    [SerializeField] List<GameObject> powerupPrefabs;
     public int enemyCount;
     public int waveNumber = 1;
     // Start is called before the first frame update
@@ -30,13 +31,18 @@ public class SpawnManager : MonoBehaviour
     {
         for(int i = 0; i < count; i++)
         {
-            Instantiate(enemyPrefab, GenerateRandomPosition(), enemyPrefab.transform.rotation);
+            int randomIndex = Random.Range(0, enemyPrefabs.Count);
+            GameObject enemy = enemyPrefabs[randomIndex];
+
+            Instantiate(enemy, GenerateRandomPosition(), enemy.transform.rotation);
         }
     }
 
     private void SpawnPowerup()
     {
-         Instantiate(powerupPrefab, GenerateRandomPosition(), powerupPrefab.transform.rotation);
+        int randomIndex = Random.Range(0, powerupPrefabs.Count);
+        GameObject powerupPrefab = powerupPrefabs[randomIndex];
+        Instantiate(powerupPrefab, GenerateRandomPosition(), powerupPrefab.transform.rotation);
     }
 
     private Vector3 GenerateRandomPosition()

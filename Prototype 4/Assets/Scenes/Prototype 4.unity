@@ -288,10 +288,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce63012ca053484495fa5a49f0fdcad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6692706802499302625, guid: 1f22bbe12544edd4aa6e0d956b58b7cc,
-    type: 3}
-  powerupPrefab: {fileID: 7229892816479482494, guid: 5e36b655e841ed140826a0fdc2c961a0,
-    type: 3}
+  enemyPrefabs:
+  - {fileID: 6692706802499302625, guid: 1f22bbe12544edd4aa6e0d956b58b7cc, type: 3}
+  - {fileID: 9124480934533306296, guid: 3822d3923e40b65448c6da0311e0bb92, type: 3}
+  powerupPrefabs:
+  - {fileID: 7229892816479482494, guid: 5e36b655e841ed140826a0fdc2c961a0, type: 3}
+  - {fileID: 5575500863890267428, guid: 528cae683f296b244bb63abc4407a76d, type: 3}
   enemyCount: 1
   waveNumber: 1
 --- !u!4 &1050041107
