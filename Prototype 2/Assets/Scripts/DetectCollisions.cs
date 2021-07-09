@@ -14,7 +14,6 @@ public class DetectCollisions : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         other.gameObject.SetActive(false);
-        gm.UpdateScore(1);
-        Destroy(gameObject);
+        gameObject.GetComponent<AnimalHunger>().FeedAnimal(1);
     }
 }

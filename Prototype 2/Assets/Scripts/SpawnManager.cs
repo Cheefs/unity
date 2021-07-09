@@ -27,20 +27,20 @@ public class SpawnManager : MonoBehaviour
         gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
         spawnPosList = new List<SpawnProps> {
             new SpawnProps() {
-                posX = new float[2] { -spawnRangeX/2, spawnRangeX/2 },
+                posX = new float[2] { -spawnRangeX, spawnRangeX },
                 posY = new float[2] { 0, 0 },
                 posZ = new float[2] { spawnRangeZ, spawnRangeZ },
             },
             new SpawnProps() {
                 posX = new float[2] { spawnRangeX, spawnRangeX },
                 posY = new float[2] { 0, 0 },
-                posZ = new float[2] { -spawnRangeZ / 2, spawnRangeZ /2 },
+                posZ = new float[2] { 0, 16 },
                 rotation = new Vector3(0,90,0)
             },
              new SpawnProps() {
                 posX = new float[2] { -spawnRangeX, -spawnRangeX },
                 posY = new float[2] { 0, 0 },
-                posZ = new float[2] { -spawnRangeZ /2, spawnRangeZ/2 },
+                posZ = new float[2] { 0, 16 },
                 rotation = new Vector3(0,-90,0)
             },
         };
